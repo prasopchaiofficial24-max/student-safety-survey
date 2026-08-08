@@ -97,10 +97,8 @@ body{font-family:'Prompt','Sarabun',Arial,sans-serif;background:var(--bg);color:
 .friend-input-wrap.show{display:block}
 .friend-label{font-size:.8rem;color:#92400e;font-weight:600;margin-bottom:8px}
 .friend-row{display:flex;gap:8px}
-.friend-sel{flex:1;padding:9px 12px;border:1.5px solid #fed7aa;border-radius:9px;font-size:.85rem;font-family:inherit;background:#fff;color:var(--txt);appearance:none;-webkit-appearance:none}
-.friend-sel:focus{outline:none;border-color:var(--warn)}
-.friend-num{width:80px;padding:9px 12px;border:1.5px solid #fed7aa;border-radius:9px;font-size:.85rem;font-family:inherit;background:#fff;color:var(--txt)}
-.friend-num:focus{outline:none;border-color:var(--warn)}
+.friend-name{flex:1;padding:9px 12px;border:1.5px solid #fed7aa;border-radius:9px;font-size:.85rem;font-family:inherit;background:#fff;color:var(--txt)}
+.friend-name:focus{outline:none;border-color:var(--warn)}
 .friend-hint{font-size:.73rem;color:#92400e;margin-top:6px}
 
 /* ── LOGIN FORM ── */
@@ -381,10 +379,9 @@ body{font-family:'Prompt','Sarabun',Arial,sans-serif;background:var(--bg);color:
           <div class="yn-pill" onclick="selYNFriend('q9','yes',this)">มี</div>
         </div>
         <div class="friend-input-wrap" id="fi9">
-          <div class="friend-label">ระบุชั้น + เลขที่ของเพื่อน (ถ้าทราบ)</div>
+          <div class="friend-label">ระบุชื่อ-นามสกุลเพื่อน (ถ้าทราบ)</div>
           <div class="friend-row">
-            <select class="friend-sel" id="fi9-grade"><option value="">-- ชั้น --</option><option>ม.1</option><option>ม.2</option><option>ม.3</option><option>ม.4</option><option>ม.5</option><option>ม.6</option></select>
-            <input class="friend-num" id="fi9-no" type="number" min="1" max="50" placeholder="เลขที่">
+            <input class="friend-name" id="fi9-name" type="text" placeholder="ชื่อ-นามสกุลเพื่อน" autocomplete="off">
           </div>
           <div class="friend-hint">ไม่ทราบก็ไม่ต้องกรอก โรงเรียนจะสอบถามต่อ</div>
         </div>
@@ -398,10 +395,9 @@ body{font-family:'Prompt','Sarabun',Arial,sans-serif;background:var(--bg);color:
           <div class="yn-pill" onclick="selYNFriend('q10','yes',this)">มี</div>
         </div>
         <div class="friend-input-wrap" id="fi10">
-          <div class="friend-label">ระบุชั้น + เลขที่ของเพื่อน (ถ้าทราบ)</div>
+          <div class="friend-label">ระบุชื่อ-นามสกุลเพื่อน (ถ้าทราบ)</div>
           <div class="friend-row">
-            <select class="friend-sel" id="fi10-grade"><option value="">-- ชั้น --</option><option>ม.1</option><option>ม.2</option><option>ม.3</option><option>ม.4</option><option>ม.5</option><option>ม.6</option></select>
-            <input class="friend-num" id="fi10-no" type="number" min="1" max="50" placeholder="เลขที่">
+            <input class="friend-name" id="fi10-name" type="text" placeholder="ชื่อ-นามสกุลเพื่อน" autocomplete="off">
           </div>
           <div class="friend-hint">ไม่ทราบก็ไม่ต้องกรอก</div>
         </div>
@@ -415,10 +411,9 @@ body{font-family:'Prompt','Sarabun',Arial,sans-serif;background:var(--bg);color:
           <div class="yn-pill" onclick="selYNFriend('q11','yes',this)">มี</div>
         </div>
         <div class="friend-input-wrap" id="fi11">
-          <div class="friend-label">ระบุชั้น + เลขที่ของเพื่อน (ถ้าทราบ)</div>
+          <div class="friend-label">ระบุชื่อ-นามสกุลเพื่อน (ถ้าทราบ)</div>
           <div class="friend-row">
-            <select class="friend-sel" id="fi11-grade"><option value="">-- ชั้น --</option><option>ม.1</option><option>ม.2</option><option>ม.3</option><option>ม.4</option><option>ม.5</option><option>ม.6</option></select>
-            <input class="friend-num" id="fi11-no" type="number" min="1" max="50" placeholder="เลขที่">
+            <input class="friend-name" id="fi11-name" type="text" placeholder="ชื่อ-นามสกุลเพื่อน" autocomplete="off">
           </div>
           <div class="friend-hint">ไม่ทราบก็ไม่ต้องกรอก</div>
         </div>
@@ -432,10 +427,9 @@ body{font-family:'Prompt','Sarabun',Arial,sans-serif;background:var(--bg);color:
           <div class="yn-pill" onclick="selYNFriend('q12','yes',this)">มี</div>
         </div>
         <div class="friend-input-wrap" id="fi12">
-          <div class="friend-label">ระบุชั้น + เลขที่ของเพื่อน (ถ้าทราบ)</div>
+          <div class="friend-label">ระบุชื่อ-นามสกุลเพื่อน (ถ้าทราบ)</div>
           <div class="friend-row">
-            <select class="friend-sel" id="fi12-grade"><option value="">-- ชั้น --</option><option>ม.1</option><option>ม.2</option><option>ม.3</option><option>ม.4</option><option>ม.5</option><option>ม.6</option></select>
-            <input class="friend-num" id="fi12-no" type="number" min="1" max="50" placeholder="เลขที่">
+            <input class="friend-name" id="fi12-name" type="text" placeholder="ชื่อ-นามสกุลเพื่อน" autocomplete="off">
           </div>
           <div class="friend-hint">ไม่ทราบก็ไม่ต้องกรอก</div>
         </div>
@@ -469,10 +463,10 @@ body{font-family:'Prompt','Sarabun',Arial,sans-serif;background:var(--bg);color:
 const ans = {
   q1:null,q2:null,q3:null,q4:null,
   q5:null,q6:null,q7:null,q8:null,
-  q9:null,q9g:'',q9n:'',
-  q10:null,q10g:'',q10n:'',
-  q11:null,q11g:'',q11n:'',
-  q12:null,q12g:'',q12n:''
+  q9:null,q9name:'',
+  q10:null,q10name:'',
+  q11:null,q11name:'',
+  q12:null,q12name:''
 };
 let student = {grade:'',no:'',existingId:null};
 let db = null;
@@ -627,8 +621,7 @@ async function submitSurvey(){
   ['9','10','11','12'].forEach(n=>{
     const qk = 'q'+n;
     if(ans[qk]==='yes'){
-      ans[qk+'g'] = document.getElementById('fi'+n+'-grade')?.value||'';
-      ans[qk+'n'] = document.getElementById('fi'+n+'-no')?.value||'';
+      ans[qk+'name'] = document.getElementById('fi'+n+'-name')?.value.trim()||'';
     }
   });
 
@@ -651,10 +644,10 @@ async function submitSurvey(){
     q5_revenge: ans.q5, q6_hurt_others: ans.q6,
     q7_hurt_self: ans.q7, q8_weapon_home: ans.q8,
     // ส่วน 3
-    q9_friend_threat: ans.q9, q9_friend_grade: ans.q9g, q9_friend_no: ans.q9n,
-    q10_friend_weapon: ans.q10, q10_friend_grade: ans.q10g, q10_friend_no: ans.q10n,
-    q11_friend_violent: ans.q11, q11_friend_grade: ans.q11g, q11_friend_no: ans.q11n,
-    q12_friend_concern: ans.q12, q12_friend_grade: ans.q12g, q12_friend_no: ans.q12n,
+    q9_friend_threat: ans.q9, q9_friend_name: ans.q9name,
+    q10_friend_weapon: ans.q10, q10_friend_name: ans.q10name,
+    q11_friend_violent: ans.q11, q11_friend_name: ans.q11name,
+    q12_friend_concern: ans.q12, q12_friend_name: ans.q12name,
     // computed
     riskLevel: level,
     alertFlags: flags,
