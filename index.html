@@ -16,7 +16,7 @@ const FIREBASE_CONFIG = {
 };
 const SURVEY_COL = 'violenceSurvey';
 const SCHOOL     = 'โรงเรียนจิกดู่วิทยา';
-const PIN        = 'JDW';
+let _surveyPin   = null; // โหลดจาก Firestore config ตอน init
 </script>
 
 <link rel="icon" type="image/png" href="logo.png">
@@ -481,6 +481,9 @@ let db = null;
 try {
   firebase.initializeApp(FIREBASE_CONFIG);
   db = firebase.firestore();
+  db.collection('config').doc('app').get()
+    .then(doc => { if (doc.exists) _surveyPin = doc.data().survey_pin || null; })
+    .catch(() => {});
 } catch(e){ console.warn('Firebase init failed',e); }
 
 // ── LOGIN ──
@@ -495,7 +498,10 @@ async function doLogin(){
   dup.classList.remove('show');
 
   if(!grade || !no || !pin){ err.classList.add('show'); return; }
-  if(pin !== PIN){ err.textContent='รหัสห้องเรียนไม่ถูกต้อง'; err.classList.add('show'); return; }
+  if(_surveyPin === null){
+    err.textContent = 'ระบบกำลังโหลด กรุณารอสักครู่แล้วลองใหม่'; err.classList.add('show'); return;
+  }
+  if(pin !== _surveyPin){ err.textContent='รหัสห้องเรียนไม่ถูกต้อง'; err.classList.add('show'); return; }
 
   student = {grade, no, existingId: null};
 
