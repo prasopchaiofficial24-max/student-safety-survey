@@ -593,8 +593,8 @@ async function doLogin(){
     showLoad(true);
     try {
       const now   = new Date();
-      const year  = now.getFullYear() + 543;
       const month = now.getMonth()+1;
+      const year  = now.getFullYear() + 543 - (month <= 4 ? 1 : 0); // ปีการศึกษาเริ่ม พ.ค.
       const sem   = month >= 5 && month <= 9 ? 1 : 2;
       const snap  = await db.collection(SURVEY_COL)
         .where('grade','==',grade)
@@ -721,8 +721,8 @@ async function submitSurvey(){
 
   const {level, flags} = calcRisk();
   const now   = new Date();
-  const year  = now.getFullYear() + 543;
   const month = now.getMonth()+1;
+  const year  = now.getFullYear() + 543 - (month <= 4 ? 1 : 0);
   const sem   = month >= 5 && month <= 9 ? 1 : 2;
 
   const data = {
